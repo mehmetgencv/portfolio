@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  web:
+    image: node:20-alpine
+    container_name: nextjs-app
+    working_dir: /app
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    command: sh -c "yarn install && yarn dev"
+
+  # Add additional services or configurations as needed.
