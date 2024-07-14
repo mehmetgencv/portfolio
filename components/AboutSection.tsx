@@ -4,6 +4,8 @@ import Image from "next/image"
 const skills = [
   { skill: "Python" },
   { skill: "Java" },
+  { skill: "FastAPI" },
+  { skill: "Flask" },
   { skill: "Spring Boot" },
   { skill: "Elasticsearch" },
   { skill: "Docker" },
@@ -37,20 +39,20 @@ const AboutSection = () => {
               <span className="font-bold">{" driven"}</span> software engineer
               based in Turkey.
             </p>
-            <br />
+            <br/>
             <p>
               I graduated from Adana Science and Technology University, in 2020
               with a BS in Electrical and Electronics Engineering and have been working in the
               field ever since.
             </p>
-            <br />
+            <br/>
             <p>
               I have a wide range of hobbies and passions that keep me busy.
               From reading, playing sports, traveling,
               I am always seeking new experiences and love to keep myself
               engaged and learning new things.
             </p>
-            <br />
+            <br/>
             <p>
               I believe that you should{" "}
               <span className="font-bold text-teal-500">
@@ -60,6 +62,16 @@ const AboutSection = () => {
               technology and a desire to always push the limits of what is
               possible. I am excited to see where my career takes me and am
               always open to new opportunities. 🙂
+            </p>
+            <p>
+              <a
+                  href="https://drive.google.com/file/d/1Cdq78lJbeYdg0AlIr8_CJ3yXvOlDP2Yz/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-teal-500 underline"
+              >
+                Download my resume
+              </a>
             </p>
           </div>
           <div className="text-center md:w-1/2 md:text-left">
