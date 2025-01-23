@@ -1,0 +1,23 @@
+/* Timeline styles */
+.timeline-container {
+  @apply flex flex-col md:flex-row items-center md:justify-center;
+}
+
+.timeline-pointer {
+  @apply absolute w-6 h-6 rounded-full bg-teal-500 shadow-lg left-16 md:mx-auto md:left-0 md:right-0;
+  transform: translateX(-50%);
+}
+
+.timeline-container > div:last-child {
+  @apply ml-8 md:ml-0 md:w-1/2 md:pl-8;
+}
+
+@media (min-width: 768px) {
+  .timeline-container:nth-child(even) {
+    @apply flex-row-reverse;
+  }
+
+  .timeline-container:nth-child(even) > div:last-child {
+    @apply pl-0 pr-8;
+  }
+} 
