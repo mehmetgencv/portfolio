@@ -20,7 +20,7 @@ const projects = [
     {
         name: "Expense Tracker - Spring Boot",
         description: "Expense Tracker is a RESTful web application that allows users to track their expenses, generate reports, and visualize data through various endpoints. This application is built using Spring Boot for the backend services.",
-        image: "/expenseTrackerSpringBoot.png",
+        image: "/expenseTrackerSpringBoot.PNG",
         github: "https://github.com/mehmetgencv/expense-tracker",
         link: "https://github.com/mehmetgencv/expense-tracker",
     },

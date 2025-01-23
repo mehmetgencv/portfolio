@@ -65,7 +65,7 @@ const AboutSection = () => {
             </p>
             <p>
               <a
-                  href="https://drive.google.com/file/d/1Cdq78lJbeYdg0AlIr8_CJ3yXvOlDP2Yz/view?usp=drive_link"
+                  href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-teal-500 underline"
