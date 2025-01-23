@@ -1,7 +1,3 @@
-Here's an updated version of your README that includes a mention of your personal portfolio site:
-
----
-
 # Tailwind CSS and Next.js Portfolio
 
 This is a template for creating a stylish portfolio using **Tailwind CSS** and **Next.js**. It provides a clean, responsive, and customizable layout to showcase your skills, projects, and resume.
