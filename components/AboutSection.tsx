@@ -4,6 +4,7 @@ import Image from "next/image"
 import {FaPython, FaJava, FaDocker, FaAws, FaDownload} from "react-icons/fa";
 import { SiFastapi, SiFlask, SiSpringboot, SiElasticsearch , SiApachekafka, SiRabbitmq, SiGit, SiMongodb } from "react-icons/si";
 import { RiInfinityLine } from "react-icons/ri";
+import { MdEmail } from "react-icons/md";
 
 import { VscAzure } from "react-icons/vsc";
 
@@ -71,7 +72,7 @@ const AboutSection = () => {
               always open to new opportunities. 🙂
             </p>
             <br />
-            <p>
+            <p className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6 md:justify-start">
               <a
                   href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
                   target="_blank"
@@ -81,7 +82,20 @@ const AboutSection = () => {
                 <FaDownload className="text-xl" />
                 <span className="font-semibold">Download My Resume</span>
               </a>
+
+              <a
+                  href="mailto:mehmetgencv@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+              >
+                <MdEmail className="text-xl" />
+                <span className="font-semibold">Email Me</span>
+              </a>
             </p>
+
+
+
 
 
           </div>
