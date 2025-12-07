@@ -1,8 +1,8 @@
 import React from "react"
 import Image from "next/image"
 
-import {FaPython, FaJava, FaDocker, FaAws, FaDownload} from "react-icons/fa";
-import { SiFastapi, SiFlask, SiSpringboot, SiElasticsearch , SiApachekafka, SiRabbitmq, SiGit, SiMongodb } from "react-icons/si";
+import { FaPython, FaJava, FaDocker, FaAws, FaDownload } from "react-icons/fa";
+import { SiFastapi, SiFlask, SiSpringboot, SiElasticsearch, SiApachekafka, SiRabbitmq, SiGit, SiMongodb } from "react-icons/si";
 import { RiInfinityLine } from "react-icons/ri";
 import { MdEmail } from "react-icons/md";
 
@@ -22,7 +22,7 @@ const skills = [
   { skill: "Kafka", icon: <SiApachekafka /> },
   { skill: "RabbitMQ", icon: <SiRabbitmq /> },
   { skill: "Git", icon: <SiGit /> },
-  { skill: "CI/CD", icon: <RiInfinityLine  /> },
+  { skill: "CI/CD", icon: <RiInfinityLine /> },
   { skill: "MongoDB", icon: <SiMongodb /> },
 ];
 
@@ -45,22 +45,22 @@ const AboutSection = () => {
               <span className="font-bold">{"highly ambitious"}</span>,
               <span className="font-bold">{" self-motivated"}</span>, and
               <span className="font-bold">{" driven"}</span> software engineer
-              based in Türkiye.With a strong dedication to problem-solving and innovation,
+              based in Türkiye. With a strong dedication to problem-solving and innovation,
               I continuously strive to enhance my skills and contribute to impactful projects.
             </p>
-            <br/>
+            <br />
             <p>
               I graduated from Adana Science and Technology University in 2020 with a Bachelor&apos;s degree in
               Electrical and Electronics Engineering. Since then, I&apos;ve been honing my expertise in software development,
               specializing in backend technologies, and working on scalable, high-performance systems.
             </p>
-            <br/>
+            <br />
             <p>
               Outside of work, I enjoy exploring diverse hobbies that inspire creativity and personal growth.
               Whether it&apos;s reading thought-provoking books, playing sports, or traveling to new destinations,
               I always seek experiences that broaden my perspective and challenge me to learn something new.
             </p>
-            <br/>
+            <br />
             <p>
               I believe that you should{" "}
               <span className="font-bold text-teal-500">
@@ -74,20 +74,20 @@ const AboutSection = () => {
             <br />
             <p className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6 md:justify-start">
               <a
-                  href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+                href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
               >
                 <FaDownload className="text-xl" />
                 <span className="font-semibold">Download My Resume</span>
               </a>
 
               <a
-                  href="mailto:mehmetgencv@gmail.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
+                href="mailto:mehmetgencv@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
               >
                 <MdEmail className="text-xl" />
                 <span className="font-semibold">Email Me</span>
@@ -104,14 +104,14 @@ const AboutSection = () => {
             <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
               {skills.map((item, idx) => {
                 return (
-                    <div
-                        key={idx}
-                        title={item.skill}
-                        className="bg-gray-200 flex items-center gap-2 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-teal-700 hover:text-white hover:shadow-lg hover:rotate-1"
-                    >
-                      <span className="text-lg">{item.icon}</span>
-                      <span>{item.skill}</span>
-                    </div>
+                  <div
+                    key={idx}
+                    title={item.skill}
+                    className="bg-gray-200 flex items-center gap-2 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-teal-700 hover:text-white hover:shadow-lg hover:rotate-1"
+                  >
+                    <span className="text-lg">{item.icon}</span>
+                    <span>{item.skill}</span>
+                  </div>
                 );
               })}
             </div>

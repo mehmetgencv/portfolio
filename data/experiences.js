@@ -1,6 +1,23 @@
 const experiences = [
     {
-        date: "October 2024 - Present",
+        date: "July 2025 - Present",
+        title: "Software Engineer",
+        company: "OpenPayd",
+        description: [
+            "Developed backend services using Java 17 within a microservices architecture.",
+            "Actively contributed to the Spring Boot migration from 2.7 to 3.4.",
+            "Designed efficient data models and optimizing queries on PostgreSQL.",
+            "Managed database schema changes with Flyway.",
+            "Implemented event-driven architecture using RabbitMQ.",
+            "Used Hazelcast for distributed caching and high-performance data access.",
+            "Worked with GitLab CI/CD for automated pipelines and deployments.",
+            "Ensured clean architecture, test coverage, and high code quality.",
+        ],
+        technologies: ["Java 17", "Spring Boot 3.4", "PostgreSQL", "Flyway", "RabbitMQ", "Hazelcast", "GitLab CI/CD"],
+        type: "work",
+    },
+    {
+        date: "October 2024 - June 2025",
         title: "Software Engineer",
         company: "Codebefore",
         description: [
@@ -12,7 +29,7 @@ const experiences = [
             "Developed unit and integration tests using frameworks like JUnit and Mockito to ensure code quality and reliability.",
         ],
         technologies: ["Java", "Spring Boot", "Microservices", "Docker", "JUnit", "Azure",
-            "Redis","Kafka", ],
+            "Redis", "Kafka",],
         type: "work",
     },
     {
