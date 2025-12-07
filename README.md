@@ -10,7 +10,7 @@ I am a **Software Engineer** based in Türkiye, currently working at **OpenPayd*
 
 This portfolio is built with a modern, performance-focused stack:
 
-- **Framework**: [Next.js 13](https://nextjs.org/) (App Router)
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Language**: TypeScript
 - **Animations**: Framer Motion & CSS Animations
