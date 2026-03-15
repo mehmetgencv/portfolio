@@ -26,8 +26,16 @@ const NAV_ITEMS: Array<NavItem> = [
     page: "timeline",
   },
   {
+    label: "Apps",
+    page: "myapps",
+  },
+  {
     label: "Projects",
     page: "projects",
+  },
+  {
+    label: "Contact",
+    page: "contact",
   },
 ]
 
@@ -75,7 +83,7 @@ export default function Navbar() {
                     key={idx}
                     to={item.page}
                     className={
-                      "block lg:inline-block text-neutral-900  hover:text-neutral-500 dark:text-neutral-100"
+                      "block lg:inline-block text-neutral-900 hover:text-neutral-500 dark:text-neutral-100 cursor-pointer"
                     }
                     activeClass="active"
                     spy={true}
