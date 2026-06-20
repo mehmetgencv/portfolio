@@ -73,6 +73,7 @@ const HeroSection = () => {
             >
               <AiOutlineLinkedin size={26} />
             </a>
+            {/* DO NOT enable this without explicit confirmation — resume link must not open automatically.
             <span className="w-px h-5 bg-neutral-300 dark:bg-stone-600" />
             <a
               href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
@@ -82,6 +83,7 @@ const HeroSection = () => {
             >
               Resume ↗
             </a>
+            */}
           </div>
         </motion.div>
 

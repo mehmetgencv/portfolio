@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { HiMail } from "react-icons/hi"
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai"
 import { FaXTwitter } from "react-icons/fa6"
+import { FiCheck, FiLoader } from "react-icons/fi"
 
 const socials = [
   {
@@ -27,12 +28,25 @@ const ContactSection = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Portfolio Contact from ${name}`)
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`)
-    window.location.href = `mailto:mehmetgencv@gmail.com?subject=${subject}&body=${body}`
+    setStatus("loading")
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      })
+      if (!res.ok) throw new Error()
+      setStatus("success")
+      setName("")
+      setEmail("")
+      setMessage("")
+    } catch {
+      setStatus("error")
+    }
   }
 
   return (
@@ -87,11 +101,20 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-xl shadow-lg shadow-teal-500/20 transition-all duration-300 hover:-translate-y-0.5"
+              disabled={status === "loading" || status === "success"}
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 disabled:opacity-70 disabled:cursor-not-allowed text-white font-semibold rounded-xl shadow-lg shadow-teal-500/20 transition-all duration-300 hover:-translate-y-0.5"
             >
-              <HiMail size={18} />
-              Send Message
+              {status === "loading" ? (
+                <><FiLoader size={18} className="animate-spin" /> Sending…</>
+              ) : status === "success" ? (
+                <><FiCheck size={18} /> Sent!</>
+              ) : (
+                <><HiMail size={18} /> Send Message</>
+              )}
             </button>
+            {status === "error" && (
+              <p className="text-sm text-red-500">Something went wrong. Please try again.</p>
+            )}
           </form>
         </motion.div>
 

@@ -1,7 +1,8 @@
 "use client"
 import { motion } from "framer-motion"
 import {
-  FaPython, FaJava, FaDocker, FaAws, FaDownload,
+  FaPython, FaJava, FaDocker, FaAws,
+  // FaDownload,
 } from "react-icons/fa"
 import {
   SiFastapi, SiFlask, SiSpringboot, SiElasticsearch,
@@ -79,6 +80,7 @@ const AboutSection = () => {
           </p>
 
           <div className="pt-4 flex flex-wrap gap-3">
+            {/* DO NOT enable this without explicit confirmation — resume link must not open automatically.
             <a
               href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
               target="_blank"
@@ -88,13 +90,14 @@ const AboutSection = () => {
               <FaDownload />
               Resume
             </a>
+            */}
             <a
               href="mailto:mehmetgencv@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-neutral-300 dark:border-stone-600 text-neutral-700 dark:text-neutral-200 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 font-semibold transition-all duration-300 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-violet-500 hover:from-teal-600 hover:to-violet-600 text-white font-semibold shadow-lg shadow-teal-500/25 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-teal-500/40"
             >
-              <MdEmail />
+              <MdEmail size={18} />
               Email Me
             </a>
           </div>
