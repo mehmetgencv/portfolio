@@ -1,131 +1,132 @@
-import React from "react"
-import Image from "next/image"
-
-import { FaPython, FaJava, FaDocker, FaAws, FaDownload } from "react-icons/fa";
-import { SiFastapi, SiFlask, SiSpringboot, SiElasticsearch, SiApachekafka, SiRabbitmq, SiGit, SiMongodb } from "react-icons/si";
-import { RiInfinityLine } from "react-icons/ri";
-import { MdEmail } from "react-icons/md";
-
-import { VscAzure } from "react-icons/vsc";
-
+"use client"
+import { motion } from "framer-motion"
+import {
+  FaPython, FaJava, FaDocker, FaAws, FaDownload,
+} from "react-icons/fa"
+import {
+  SiFastapi, SiFlask, SiSpringboot, SiElasticsearch,
+  SiApachekafka, SiRabbitmq, SiGit, SiMongodb, SiPostgresql, SiRedis,
+} from "react-icons/si"
+import { RiInfinityLine } from "react-icons/ri"
+import { VscAzure } from "react-icons/vsc"
+import { MdEmail } from "react-icons/md"
 
 const skills = [
-  { skill: "Python", icon: <FaPython /> },
   { skill: "Java", icon: <FaJava /> },
+  { skill: "Python", icon: <FaPython /> },
+  { skill: "Spring Boot", icon: <SiSpringboot /> },
   { skill: "FastAPI", icon: <SiFastapi /> },
   { skill: "Flask", icon: <SiFlask /> },
-  { skill: "Spring Boot", icon: <SiSpringboot /> },
-  { skill: "Elasticsearch", icon: <SiElasticsearch /> },
-  { skill: "Docker", icon: <FaDocker /> },
-  { skill: "Azure", icon: <VscAzure /> },
-  { skill: "AWS", icon: <FaAws /> },
+  { skill: "PostgreSQL", icon: <SiPostgresql /> },
+  { skill: "Redis", icon: <SiRedis /> },
   { skill: "Kafka", icon: <SiApachekafka /> },
   { skill: "RabbitMQ", icon: <SiRabbitmq /> },
+  { skill: "Elasticsearch", icon: <SiElasticsearch /> },
+  { skill: "Docker", icon: <FaDocker /> },
+  { skill: "AWS", icon: <FaAws /> },
+  { skill: "Azure", icon: <VscAzure /> },
+  { skill: "MongoDB", icon: <SiMongodb /> },
   { skill: "Git", icon: <SiGit /> },
   { skill: "CI/CD", icon: <RiInfinityLine /> },
-  { skill: "MongoDB", icon: <SiMongodb /> },
-];
+]
 
 const AboutSection = () => {
   return (
-    <section id="about">
-      <div className="my-12 pb-12 md:pt-16 md:pb-48">
-        <h1 className="text-center font-bold text-4xl">
+    <section id="about" className="py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+      >
+        <h2 className="text-center font-bold text-4xl text-neutral-800 dark:text-neutral-100">
           About Me
-          <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded"></hr>
-        </h1>
+          <hr className="w-6 h-1 mx-auto my-4 bg-teal-500 border-0 rounded" />
+        </h2>
+      </motion.div>
 
-        <div className="flex flex-col space-y-10 items-stretch justify-center align-top md:space-x-10 md:space-y-0 md:p-4 md:flex-row md:text-left">
-          <div className="md:w-1/2 ">
-            <h1 className="text-center text-2xl font-bold mb-6 md:text-left">
-              Get to know me!
-            </h1>
-            <p>
-              Hi, my name is Mehmet and I am a{" "}
-              <span className="font-bold">{"highly ambitious"}</span>,
-              <span className="font-bold">{" self-motivated"}</span>, and
-              <span className="font-bold">{" driven"}</span> software engineer
-              based in Türkiye. With a strong dedication to problem-solving and innovation,
-              I continuously strive to enhance my skills and contribute to impactful projects.
-            </p>
-            <br />
-            <p>
-              I graduated from Adana Science and Technology University in 2020 with a Bachelor&apos;s degree in
-              Electrical and Electronics Engineering. Since then, I&apos;ve been honing my expertise in software development,
-              specializing in backend technologies, and working on scalable, high-performance systems.
-            </p>
-            <br />
-            <p>
-              Outside of work, I enjoy exploring diverse hobbies that inspire creativity and personal growth.
-              Whether it&apos;s reading thought-provoking books, playing sports, or traveling to new destinations,
-              I always seek experiences that broaden my perspective and challenge me to learn something new.
-            </p>
-            <br />
-            <p>
-              I believe that you should{" "}
-              <span className="font-bold text-teal-500">
-                never stop growing
-              </span>{" "}
-              and that&#39;s what I strive to do, I have a passion for
-              technology and a desire to always push the limits of what is
-              possible. I am excited to see where my career takes me and am
-              always open to new opportunities. 🙂
-            </p>
-            <br />
-            <p className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:gap-6 md:justify-start">
-              <a
-                href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
-              >
-                <FaDownload className="text-xl" />
-                <span className="font-semibold">Download My Resume</span>
-              </a>
+      <div className="mt-12 grid md:grid-cols-2 gap-12 items-start">
+        {/* Left — bio */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="space-y-4 text-neutral-600 dark:text-neutral-400 leading-relaxed"
+        >
+          <p>
+            I&apos;m a{" "}
+            <span className="font-semibold text-neutral-800 dark:text-neutral-200">
+              backend-focused Software Engineer
+            </span>{" "}
+            with a strong passion for building scalable, high-performance systems.
+            I specialize in{" "}
+            <span className="font-semibold text-teal-600 dark:text-teal-400">
+              Java, Spring Boot, and microservices architecture
+            </span>
+            , and I enjoy solving complex distributed-systems problems.
+          </p>
+          <p>
+            I graduated from Adana Science and Technology University in 2020 with a
+            Bachelor&apos;s degree in Electrical and Electronics Engineering. Since then,
+            I&apos;ve been building backend systems at fintech and AI companies across
+            Türkiye and the US.
+          </p>
+          <p>
+            I believe in{" "}
+            <span className="font-semibold text-teal-500">never stop growing</span>{" "}
+            and constantly seek opportunities that push me further.
+          </p>
 
-              <a
-                href="mailto:mehmetgencv@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-700 text-white px-6 py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg"
-              >
-                <MdEmail className="text-xl" />
-                <span className="font-semibold">Email Me</span>
-              </a>
-            </p>
-
-
-
-
-
+          <div className="pt-4 flex flex-wrap gap-3">
+            <a
+              href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-semibold shadow-md shadow-teal-500/20 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <FaDownload />
+              Resume
+            </a>
+            <a
+              href="mailto:mehmetgencv@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-neutral-300 dark:border-stone-600 text-neutral-700 dark:text-neutral-200 hover:border-teal-500 hover:text-teal-600 dark:hover:text-teal-400 font-semibold transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <MdEmail />
+              Email Me
+            </a>
           </div>
-          <div className="text-center md:w-1/2 md:text-left">
-            <h1 className="text-2xl font-bold mb-6">My Skills</h1>
-            <div className="flex flex-wrap flex-row justify-center z-10 md:justify-start">
-              {skills.map((item, idx) => {
-                return (
-                  <div
-                    key={idx}
-                    title={item.skill}
-                    className="bg-gray-200 flex items-center gap-2 px-4 py-2 mr-2 mt-2 text-gray-500 rounded font-semibold transition-transform duration-300 ease-in-out transform hover:scale-110 hover:bg-teal-700 hover:text-white hover:shadow-lg hover:rotate-1"
-                  >
-                    <span className="text-lg">{item.icon}</span>
-                    <span>{item.skill}</span>
-                  </div>
-                );
-              })}
-            </div>
+        </motion.div>
 
-
-            {/* <Image
-              src="/hero-image.png"
-              alt=""
-              width={225}
-              height={225}
-              className="hidden md:block md:relative md:bottom-4 md:left-32 md:z-0"
-            /> */}
+        {/* Right — skills */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <h3 className="text-xl font-bold text-neutral-800 dark:text-neutral-100 mb-6">
+            Tech Stack
+          </h3>
+          <div className="flex flex-wrap gap-2.5">
+            {skills.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: idx * 0.04 }}
+                title={item.skill}
+                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-neutral-100 dark:bg-stone-800 border border-neutral-200/60 dark:border-stone-700/60 text-neutral-600 dark:text-neutral-300 text-sm font-medium hover:border-teal-400 hover:text-teal-600 dark:hover:text-teal-400 hover:-translate-y-0.5 transition-all duration-200 cursor-default"
+              >
+                <span className="text-base">{item.icon}</span>
+                <span>{item.skill}</span>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

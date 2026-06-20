@@ -1,100 +1,37 @@
 "use client"
-import React from "react"
-import {
-  AiOutlineGithub,
-  AiOutlineLinkedin,
-} from "react-icons/ai"
+import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai"
+import { FaXTwitter, FaStackOverflow } from "react-icons/fa6"
+import { SiMedium } from "react-icons/si"
 
-import { FaXTwitter,
-  FaStackOverflow,
-} from "react-icons/fa6";
-
-import { SiMedium } from "react-icons/si";
-
-interface CVIconProps {
-  className?: string; // Optional className prop
-  size?: number;      // Optional size prop
-}
-
-const CVIcon: React.FC<CVIconProps> = ({ className, size = 30 }) => (
-    <img
-        src="/cvIcon.svg" // Path relative to the public folder in Next.js
-        alt="CV Icon"
-        className={className}
-        style={{ width: size, height: size }} // Apply size dynamically
-    />
-);
+const links = [
+  { href: "https://github.com/mehmetgencv", icon: <AiOutlineGithub size={20} />, label: "GitHub" },
+  { href: "https://www.linkedin.com/in/mehmetgencv/", icon: <AiOutlineLinkedin size={20} />, label: "LinkedIn" },
+  { href: "https://x.com/mehmetgencv", icon: <FaXTwitter size={18} />, label: "X" },
+  { href: "https://stackoverflow.com/users/13236602/mehmetgenc", icon: <FaStackOverflow size={18} />, label: "Stack Overflow" },
+  { href: "https://mehmetgencv.medium.com/", icon: <SiMedium size={18} />, label: "Medium" },
+]
 
 const Footer = () => {
   return (
-    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl ">
-      <hr className="w-full h-0.5 mx-auto mt-8 bg-neutral-200 border-0"></hr>
-      <div className="mx-auto  p-4 flex flex-col text-center text-neutral-900 md:flex-row md:justify-between">
-        <div className="flex flex-row items-center justify-center space-x-1 text-neutral-500 dark:text-neutral-100">
+    <footer className="mx-auto max-w-3xl px-4 sm:px-6 md:max-w-5xl">
+      <hr className="border-neutral-200 dark:border-stone-700" />
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 py-6">
+        <p className="text-sm text-neutral-400 dark:text-neutral-500">
           © {new Date().getFullYear()} Mehmet Genc
-        </div>
-        <div className="flex flex-row items-center justify-center space-x-2 mb-1">
-          <a href="https://github.com/mehmetgencv" rel="noreferrer" target="_blank">
-            <AiOutlineGithub
-              className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-              size={30}
-            />
-          </a>
-          <a
-            href="https://x.com/mehmetgencv"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <FaXTwitter
-              className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-              size={30}
-            />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/mehmetgencv/"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <AiOutlineLinkedin
-              className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-              size={30}
-            />
-          </a>
-
-          <a
-              href="https://stackoverflow.com/users/13236602/mehmetgenc"
-              rel="noreferrer"
+        </p>
+        <div className="flex items-center gap-1">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
               target="_blank"
-          >
-            <FaStackOverflow
-                className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-                size={30}
-            />
-          </a>
-
-          <a
-              href="https://mehmetgencv.medium.com/"
               rel="noreferrer"
-              target="_blank"
-          >
-            <SiMedium
-                className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-                size={30}
-            />
-          </a>
-
-          <a
-              href="https://drive.google.com/file/d/1DErBlPVz8p7Dh6bdSDSaVw4ZOtMrseni/view?usp=sharing"
-              rel="noreferrer"
-              target="_blank"
-          >
-            <CVIcon
-                className="hover:-translate-y-1 transition-transform cursor-pointer text-neutral-500 dark:text-neutral-100"
-                size={30}
-            />
-          </a>
-          
+              aria-label={link.label}
+              className="p-2 rounded-lg text-neutral-400 dark:text-neutral-500 hover:text-neutral-700 dark:hover:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-stone-800 transition-all duration-200"
+            >
+              {link.icon}
+            </a>
+          ))}
         </div>
       </div>
     </footer>

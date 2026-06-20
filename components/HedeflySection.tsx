@@ -138,9 +138,17 @@ const HedeflySection = () => {
                 </svg>
                 App Store
               </a>
-              <span className="text-xs text-neutral-400 dark:text-neutral-500 italic">
-                Play Store — Soon
-              </span>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.hedefly.app&hl=tr"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-xl text-sm font-medium hover:opacity-90 transition-opacity"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M3.18 23.76c.3.17.64.22.99.14l13.18-7.61-2.9-2.9-11.27 10.37zM.44 1.05C.17 1.37 0 1.83 0 2.42v19.16c0 .59.17 1.05.44 1.37l.07.07 10.73-10.73v-.25L.51.98l-.07.07zM20.3 10.23l-2.94-1.7-3.24 3.24 3.24 3.24 2.95-1.71c.84-.49.84-1.28 0-1.77l-.01-.3zM3.18.24l13.18 7.61-2.9 2.9L3.18.24z" />
+                </svg>
+                Play Store
+              </a>
             </div>
           </div>
         </div>
