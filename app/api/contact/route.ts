@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 })
   }
 
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: "Portfolio Contact <onboarding@resend.dev>",
     to: "mehmetgencv@gmail.com",
     replyTo: email,
@@ -19,8 +19,11 @@ export async function POST(req: Request) {
   })
 
   if (error) {
+    console.error("[Resend error]", error)
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
+
+  console.log("[Resend success]", data)
 
   return NextResponse.json({ success: true })
 }
